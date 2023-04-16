@@ -1,0 +1,368 @@
+@import url(./nullstyle.css);
+
+:root {
+   /* ======Палітра для текста====== */
+
+   /* Колір головного текста */
+   --color-text-primary: #212121;
+   /* Колір неголовного текста */
+   --color-text-p: #757575;
+   /* Додатковий колір текста */
+   --color-text-accent: #2196F3;
+   /* Колір текста для героя*/
+   --color-text-hero: #FFFFFF;
+   /* Альтернативний колір текста кнопок */
+   --color-text-button: #FFFFFF;
+   /* Колір текста для футера*/
+   --footer-text: #FFFFFF;
+   /* Колір пояснюючого текста портфоліо при ховері */
+   --color-portfolio-middle: #FFFFFF;
+   /* Колір текста ім'я поля вводу даних */
+   --text-popup-label: #757575;
+   /* Колір плейсхолдера у модальному вікні*/
+   --color-text-placeholder: rgba(117, 117, 117, 0.5);
+   /* Колір текста вводу у футері */
+   --footer-input-sending: rgba(255, 255, 255, 0.6);
+
+   /* ======Палітра для фону====== */
+
+   /* Основний колір фону */
+   --back-primary: #FFFFFF;
+   /* Додатковий колір фону */
+   --back-accent: #F5F4FA;
+   /* Фон для героя */
+   --back-hero-primary: rgba(47, 48, 58, 0.4);
+   /* Додатковий фон героя */
+   --back-hero-accent: #C4C4C4;
+   /* Колір кнопки героя */
+   --back-button-hero: #2196F3;
+   /* Альтернативний колір кнопки героя */
+   --back-alt-hero: #188CE8;
+   /* Фон для футера */
+   --back-footer: #2F303A;
+   /* Альтернативний колір фону кнопок */
+   --back-alt-button: #2196F3;
+   /* Затемнення основного фону при активному модальному вікні */
+   --back-popup: rgba(0, 0, 0, 0.2);
+   /* Затемнення на картці портфоліо */
+   --back-portfolio-middle: rgba(33, 150, 243, 0.9);
+
+   /* ======Шрифт====== */
+
+   /* Основний шрифт */
+   --fonts-primary: Roboto;
+   /* Шрифт для лого */
+   --fonts-logo: Raleway;
+
+   /* ======Рамки====== */
+
+   /* Колір рамки героя */
+   --color-border-hero: #000000;
+   /* Колір рамки карток */
+   --color-border: #EEEEEE;
+   /* Колір рамки хедера */
+   --color-border-header: #ECECEC;
+   /* Основний колір рамки введення даних */
+   --border-popup-primary: rgba(33, 33, 33, 0.2);
+   /* Альтернативний колір рамки введення даних */
+   --border-popup-accent: #2196F3;
+   /* Колір рамки для розсилки */
+   --border-sending: rgba(255, 255, 255, 0.3);
+
+   /* ======Палітра для тіні====== */
+
+   /* Колір тіні кнопки героя*/
+   --color-shadow-hero: rgba(0, 0, 0, 0.15);
+   /* Тінь1 для фільтра портфоліо*/
+   --color-shadow-1: rgba(0, 0, 0, 0.1);
+   /* Тінь2 для фільтра портфоліо*/
+   --color-shadow-2: rgba(0, 0, 0, 0.08);
+   /* Тінь3 для фільтра портфоліо*/
+   --color-shadow-3: rgba(0, 0, 0, 0.12);
+   /* Тінь1 для картки команди */
+   --color-shadow-team1: rgba(0, 0, 0, 0.12);
+   /* Тінь2 для картки команди */
+   --color-shadow-team2: rgba(0, 0, 0, 0.14);
+   /* Тінь3 для картки команди */
+   --color-shadow-team3: rgba(0, 0, 0, 0.2);
+
+   /* ======Палітра для іконок====== */
+
+   /* Основний колір іконок */
+   --color-icon-primary: #AFB1B8;
+   /* Алтернативний колір іконок */
+   --color-icon-accent: #FFFFFF;
+   /* Основний колір фона іконок */
+   --back-icon-primary: #FFFFFF;
+   /* Алтернативний колір фона іконок */
+   --back-icon-accent: #2196F3;
+   /* Колір фона іконок у футері */
+   --back-icon-footer: rgba(256, 256, 256, 0.1);
+   /* Колір для кнопки закриття модального вікна */
+   --color-popup-close: rgba(0, 0, 0, 0.1);
+
+}
+
+/* --------------- Стилізація сторінки ------------- */
+.wrapper {
+   position: relative;
+   min-height: 100%;
+   background-color: var(--back-primary);
+   font-family: var(--fonts-primary);
+   font-size: 14px;
+   font-weight: 400;
+   color: var(--color-text-primary);
+}
+
+.container {
+   max-width: 1200px;
+   height: 100%;
+   padding: 0 15px;
+   margin: 0 auto;
+   display: flex;
+   justify-content: space-between;
+}
+
+/* ---------------- Хедер ---------------- */
+.header {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 80px;
+   border-bottom: 1px solid var(--color-border-header);
+}
+
+.header__container {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.container__logo-nav {
+   height: 100%;
+   max-width: 520px;
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.logo {
+   font-family: var(--fonts-logo);
+   color: var(--color-text-accent);
+   font-size: 26px;
+   line-height: calc(31/26);
+   letter-spacing: 0.03em;
+}
+
+.header__logo span {
+   color: var(--color-text-primary);
+}
+
+.header__nav {
+   max-width: 285px;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   flex-wrap: nowrap;
+   justify-content: space-between;
+}
+
+.nav__link,
+.connection__link {
+   font-weight: 500;
+   font-size: 14px;
+   letter-spacing: 0.02em;
+}
+
+.nav__link {
+   height: 100%;
+   display: flex;
+   align-items: center;
+   position: relative;
+   color: var(--color-text-primary);
+   margin-left: 10px;
+}
+
+.nav__link:hover,
+.nav__link:focus,
+.connection__link:hover,
+.connection__link:focus,
+.curent {
+   color: var(--back-icon-accent)
+}
+
+.curent::after {
+   content: "";
+   position: absolute;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   height: 4px;
+   border-radius: 2px;
+   background-color: var(--back-icon-accent);
+}
+
+.header__connection {
+   max-width: 350px;
+   width: 100%;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+
+}
+
+.connection__link {
+   color: var(--color-text-p);
+   display: flex;
+   align-items: center;
+   margin: 5px 0 5px 10px;
+}
+
+.connection__icon {
+   fill: currentColor;
+   margin-right: 10px;
+}
+
+/* ---------------- Контент Студія ---------------- */
+
+
+/* ---------------- Герой ---------------- */
+
+
+/* ---------------- Контент портфоліо ---------------- */
+
+
+/* ---------------- Футер ---------------- */
+.footer {
+   width: 100%;
+   position: absolute;
+   left: 0;
+   bottom: 0;
+   padding: 60px 0;
+   background-color: var(--back-footer);
+   padding: 60px 0;
+}
+
+.footer__contacts {
+   margin-top: 20px;
+}
+
+.footer__contacts li {
+   margin-top: 9px;
+   line-height: calc(21/14);
+   letter-spacing: 0.03em;
+}
+
+.contacts__addr {
+   color: var(--footer-text);
+}
+
+.contacts__mail,
+.contacts__tel {
+   color: var(--footer-text);
+   opacity: 0.6;
+}
+
+.footer__logo span {
+   color: var(--footer-text);
+}
+
+.contacts__addr:hover,
+.contacts__mail:hover,
+.contacts__tel:hover,
+.contacts__addr:focus,
+.contacts__mail:focus,
+.contacts__tel:focus {
+   color: var(--color-text-accent);
+   opacity: 1;
+}
+
+.social__title,
+.subscription__title {
+   font-weight: 700;
+   line-height: calc(16/14);
+   letter-spacing: 0.03em;
+   text-transform: uppercase;
+   color: var(--footer-text);
+   margin-top: 12px;
+}
+
+.social__menu {
+   width: 206px;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   margin-top: 20px;
+}
+
+.social__link {
+   width: 44px;
+   height: 44px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 50%;
+   background-color: var(--back-icon-footer);
+}
+
+.social__link:hover,
+.social__link:focus {
+   background-color: var(--back-icon-accent);
+   transition: 0.25s;
+}
+
+.subscription__form {
+   display: flex;
+   align-items: end;
+}
+
+.footer__social-icon {
+   fill: var(--back-icon-primary);
+}
+
+.subscription__input {
+   width: 358px;
+   height: 50px;
+   padding: 15px;
+   background-color: transparent;
+   border: 1px solid var(--border-sending);
+   border-radius: 4px;
+   margin-top: 20px;
+}
+
+.subscription__input,
+.subscription__input::placeholder {
+   font-size: 16px;
+   line-height: calc(20/16);
+   letter-spacing: 0.05em;
+   color: var(--footer-input-sending);
+}
+
+/* ---------------- Кнопка ---------------- */
+.button {
+   width: 200px;
+   height: 50px;
+   margin-left: 12px;
+   background-color: var(--back-alt-button);
+   border-radius: 4px;
+   font-weight: 700;
+   font-size: 16px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   letter-spacing: 0.06em;
+   color: var(--color-text-button);
+}
+
+.subscription__icon {
+   fill: var(--color-text-button);
+   margin-left: 10px;
+}
+
+/* ---------------- Модальне вікно ---------------- */
+
+
+/* ---------------- Брейкпоінти ---------------- */
