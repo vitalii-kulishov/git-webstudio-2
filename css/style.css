@@ -331,8 +331,7 @@
 }
 
 .subscription__input {
-   max-width: 358px;
-   width: 100%;
+   width: 358px;
    height: 50px;
    padding: 15px;
    background-color: transparent;
