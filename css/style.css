@@ -31,13 +31,11 @@
    /* Додатковий колір фону */
    --back-accent: #F5F4FA;
    /* Фон для героя */
-   --back-hero-primary: rgba(47, 48, 58, 0.7);
+   --back-hero-primary: rgba(47, 48, 58, 0.4);
    /* Додатковий фон героя */
    --back-hero-accent: #C4C4C4;
-   /* Колір кнопки героя */
-   --back-button-hero: #2196F3;
    /* Альтернативний колір кнопки героя */
-   --back-alt-hero: #188CE8;
+   --back-alt-hero: #055393;
    /* Фон для футера */
    --back-footer: #2F303A;
    /* Альтернативний колір фону кнопок */
@@ -244,17 +242,8 @@
    justify-content: center;
    align-items: center;
    background-color: var(--back-hero-accent);
-   background: url(../images/hero-back.jpg), var(--back-hero-primary);
+   background: url(../images/hero-back.jpg) center/cover no-repeat, var(--back-hero-primary);
    background-blend-mode: overlay;
-
-}
-
-.hero__banner {
-   /* position: absolute;
-   top: 0;
-   left: 0; */
-   width: 100%;
-   height: 100%;
 
 }
 
@@ -343,11 +332,13 @@
 }
 
 .social__menu {
-   width: 206px;
+   max-width: 206px;
    display: flex;
    flex-direction: row;
    justify-content: space-between;
    margin-top: 20px;
+   flex-wrap: wrap;
+   gap: 10px;
 }
 
 .social__link {
@@ -358,6 +349,10 @@
    align-items: center;
    border-radius: 50%;
    background-color: var(--back-icon-footer);
+}
+
+.footer__social-icon {
+   fill: var(--back-icon-primary);
 }
 
 .social__link:hover,
@@ -376,10 +371,6 @@
    display: flex;
    align-items: end;
    flex-wrap: wrap;
-}
-
-.footer__social-icon {
-   fill: var(--back-icon-primary);
 }
 
 .subscription__input {
@@ -413,6 +404,12 @@
    justify-content: center;
    letter-spacing: 0.06em;
    color: var(--color-text-button);
+}
+
+
+.button:hover,
+.button:focus {
+   background-color: var(--back-alt-hero);
 }
 
 .subscription__button {
