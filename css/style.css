@@ -71,13 +71,9 @@
 
    /* Колір тіні кнопки героя*/
    --shadow-hero: rgba(0, 0, 0, 0.15);
-   /* Тінь1 для фільтра портфоліо*/
-   --color-shadow-1: rgba(0, 0, 0, 0.1);
-   /* Тінь2 для фільтра портфоліо*/
-   --color-shadow-2: rgba(0, 0, 0, 0.08);
-   /* Тінь3 для фільтра портфоліо*/
-   --color-shadow-3: rgba(0, 0, 0, 0.12);
-   /* Тінь1 для картки команди */
+   /* Тінь для фільтра портфоліо*/
+   --shadow-portfolio: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+   /* Тінь для картки команди */
    --shadow-team: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
 
    /* ======Палітра для іконок====== */
@@ -426,6 +422,57 @@
 
 /* ---------------- Контент портфоліо ---------------- */
 
+.portfolio__item {
+   max-width: 370px;
+   border: 1px solid var(--color-border);
+   overflow: hidden;
+}
+
+.portfolio__bottom {
+   margin: 20px 24px;
+}
+
+.portfolio__img {
+   position: relative;
+}
+
+.portfolio__subtitle {
+   font-weight: 700;
+   font-size: 18px;
+   line-height: 2;
+   letter-spacing: 0.06em;
+}
+
+.portfolio__type {
+   font-size: 16px;
+   line-height: calc(30/16);
+   color: var(--color-text-p);
+}
+
+.portfolio-middle {
+   position: absolute;
+   height: 100%;
+   padding: 0 24px;
+   display: flex;
+   align-items: center;
+   top: 0;
+   font-size: 18px;
+   line-height: calc(28/18);
+   color: var(--color-portfolio-middle);
+   background-color: var(--back-portfolio-middle);
+   opacity: 0;
+}
+
+.portfolio__item:hover,
+.portfolio__item:focus {
+   cursor: pointer;
+   box-shadow: var(--shadow-portfolio);
+}
+
+.portfolio__item:hover .portfolio-middle,
+.portfolio__item:focus .portfolio-middle{
+   opacity: 1;
+}
 
 /* ---------------- Футер ---------------- */
 .footer {
