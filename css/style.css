@@ -72,7 +72,9 @@
    /* Колір тіні кнопки героя*/
    --shadow-hero: rgba(0, 0, 0, 0.15);
    /* Тінь для фільтра портфоліо*/
-   --shadow-portfolio: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+   --shadow-filter-portfolio: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+   /* Тінь для картки портфоліо*/
+   --shadow-card-portfolio: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
    /* Тінь для картки команди */
    --shadow-team: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
 
@@ -421,7 +423,35 @@
 }
 
 /* ---------------- Контент портфоліо ---------------- */
+/* Фільтр портфоліо */
 
+.portfolio__filter {
+   display: flex;
+   flex-wrap: wrap;
+   flex-direction: row;
+   justify-content: center;
+   gap: 8px;
+   margin-bottom: 56px;
+}
+
+.filter__button {
+   padding: 6px 22px;
+   font-weight: 500;
+   font-size: 16px;
+   line-height: calc(26/16);
+   text-align: center;
+   letter-spacing: 0.03em;
+   color: var(--color-text-primary);
+   background-color: var(--back-accent);
+   border-radius: 4px;
+}
+
+.filter__button:hover {
+   background-color: var(--back-alt-button);
+   box-shadow: var(--shadow-filter-portfolio);
+}
+
+/* Картки портфоліо */
 .portfolio__item {
    max-width: 370px;
    border: 1px solid var(--color-border);
@@ -466,11 +496,11 @@
 .portfolio__item:hover,
 .portfolio__item:focus {
    cursor: pointer;
-   box-shadow: var(--shadow-portfolio);
+   box-shadow: var(--shadow-card-portfolio);
 }
 
 .portfolio__item:hover .portfolio-middle,
-.portfolio__item:focus .portfolio-middle{
+.portfolio__item:focus .portfolio-middle {
    opacity: 1;
 }
 
