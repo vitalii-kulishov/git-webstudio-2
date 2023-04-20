@@ -41,7 +41,7 @@
    /* Альтернативний колір фону кнопок */
    --back-alt-button: #2196F3;
    /* Затемнення основного фону при активному модальному вікні */
-   --back-popup: rgba(0, 0, 0, 0.2);
+   --back-popup: rgba(0, 0, 0, 0.5);
    /* Затемнення на картці портфоліо */
    --back-portfolio-middle: rgba(33, 150, 243, 0.9);
 
@@ -60,6 +60,8 @@
    --color-border: #EEEEEE;
    /* Колір рамки хедера */
    --color-border-header: #ECECEC;
+   /* Колір кнопки закриття введення даних */
+   --color-border-close: rgba(0, 0, 0, 0.1);
    /* Основний колір рамки введення даних */
    --border-popup-primary: rgba(33, 33, 33, 0.2);
    /* Альтернативний колір рамки введення даних */
@@ -77,6 +79,10 @@
    --shadow-card-portfolio: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
    /* Тінь для картки команди */
    --shadow-team: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+   /* Тінь для поля введення даних */
+   --shadow-popup: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+   /* Тінь для кнопки Відправити у полі введення даних */
+   --shadow-popup-button: 0px 4px 4px rgba(0, 0, 0, 0.15);
 
    /* ======Палітра для іконок====== */
 
@@ -91,7 +97,7 @@
    /* Колір фона іконок у футері */
    --back-icon-footer: rgba(256, 256, 256, 0.1);
    /* Колір для кнопки закриття модального вікна */
-   --color-popup-close: rgba(0, 0, 0, 0.1);
+   --color-popup-x: #000000;
 
    /* ======Розміри елементів====== */
    --height-header: 80px;
@@ -128,7 +134,7 @@
    left: 0;
    width: 100%;
    height: var(--height-header);
-   z-index: 99;
+   z-index: 2;
    background-color: var(--back-primary);
    border-bottom: 1px solid var(--color-border-header);
 }
@@ -186,10 +192,7 @@
    margin-left: 10px;
 }
 
-.nav__link:hover,
-.nav__link:focus,
-.connection__link:hover,
-.connection__link:focus,
+:is(.nav__link, .connection__link):is(:hover, :focus),
 .curent {
    color: var(--back-icon-accent)
 }
@@ -211,7 +214,6 @@
    display: flex;
    flex-wrap: wrap;
    justify-content: space-between;
-
 }
 
 .connection__link {
@@ -250,13 +252,11 @@
    letter-spacing: 0.06em;
    text-transform: uppercase;
    color: var(--color-text-hero);
-   z-index: 2;
 }
 
 .hero .hero__button {
    width: 216px;
    margin-top: 30px;
-   z-index: 2;
 }
 
 /* ---------------- Контент Студія ---------------- */
@@ -506,9 +506,6 @@
 
 /* ---------------- Футер ---------------- */
 .footer {
-   width: 100%;
-   left: 0;
-   bottom: 0;
    padding: 60px 0;
    background-color: var(--back-footer);
    padding: 60px 0;
@@ -544,12 +541,8 @@
    opacity: 0.6;
 }
 
-.contacts__addr:hover,
-.contacts__mail:hover,
-.contacts__tel:hover,
-.contacts__addr:focus,
-.contacts__mail:focus,
-.contacts__tel:focus {
+
+:is(.contacts__addr, .contacts__mail, .contacts__tel):is(:hover, :focus) {
    color: var(--color-text-accent);
    opacity: 1;
 }
@@ -657,6 +650,131 @@
 }
 
 /* ---------------- Модальне вікно ---------------- */
+.popup {
+   position: fixed;
+   top: 0;
+   left: 0;
+   opacity: 0;
+   visibility: hidden;
+   width: 100%;
+   background-color: var(--back-popup);
+   transition: 0.8s;
+   min-height: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   -webkit-overflow-scrolling: touch;
+}
 
+.popup:target {
+   opacity: 1;
+   visibility: visible;
+}
+
+.popup__arial {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+}
+
+.popup__body {
+   position: fixed;
+   width: 528px;
+   padding: 40px;
+   background-color: var(--back-primary);
+   font-family: var(--fonts-primary);
+   color: var(--color-text-primary);
+   letter-spacing: 0.03em;
+   border-radius: 4px;
+   box-shadow: var(--shadow-popup);
+}
+
+.popup__close {
+   position: absolute;
+   top: 8px;
+   right: 8px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 30px;
+   height: 30px;
+   border: 1px solid var(--color-border-close);
+   border-radius: 50%;
+}
+
+.popup__x {
+   fill: var(--color-popup-x);
+}
+
+.popup__close:hover .popup__x {
+   fill: var(--back-alt-button);
+}
+
+.popup__title {
+   font-weight: 700;
+   font-size: 20px;
+   line-height: calc(23/20);
+   text-align: center;
+   margin-bottom: 12px;
+}
+
+.popup__label {
+   display: block;
+   font-size: 12px;
+   line-height: calc(14/12);
+   letter-spacing: 0.01em;
+   color: var(--text-popup-label);
+   margin-bottom: 4px;
+}
+
+.popup__input-container {
+   position: relative;
+}
+
+.popup__icon {
+   position: absolute;
+   display: flex;
+   align-items: center;
+   top: 11px;
+   left: 12px;
+   fill: var(--color-text-primary);
+}
+
+.popup__input {
+   display: block;
+   width: 100%;
+   height: 40px;
+   padding-left: 42px;
+   font-size: 16px;
+   color: var(--text-popup-label);
+   border: 1px solid var(--border-popup-primary);
+   border-radius: 4px;
+   margin-bottom: 10px;
+}
+
+.popup__input-container:hover .popup__input,
+.popup__input-container:focus .popup__input {
+   border-color: var(--border-popup-accent);
+}
+
+.popup__input-container:hover .popup__icon,
+.popup__input-container:focus .popup__icon {
+   fill: var(--border-popup-accent);
+}
+
+.label__checkbox {
+   display: inline-block;
+   margin-bottom: 30px;
+}
+
+.popup__conditions {
+   color: var(--color-text-accent);
+   text-decoration-line: underline;
+}
+
+.popup__button {
+   margin: 0 auto;
+   box-shadow: var(--shadow-popup-button);
+}
 
 /* ---------------- Брейкпоінти ---------------- */
