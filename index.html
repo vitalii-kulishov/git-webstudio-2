@@ -648,7 +648,7 @@
             <form action="">
                 <label class="popup__label" for="username">Ім'я</label>
                 <div class="popup__input-container">
-                    <input class="popup__input" type="text" name="username">
+                    <input class="popup__input" type="text" id="username">
                     <svg class="popup__icon" width="18" height="18" viewBox="0 0 18 18">
                         <path
                             d="M9 9C10.6575 9 12 7.6575 12 6C12 4.3425 10.6575 3 9 3C7.3425 3 6 4.3425 6 6C6 7.6575 7.3425 9 9 9ZM9 10.5C6.9975 10.5 3 11.505 3 13.5V14.25C3 14.6625 3.3375 15 3.75 15H14.25C14.6625 15 15 14.6625 15 14.25V13.5C15 11.505 11.0025 10.5 9 10.5Z" />
@@ -661,7 +661,7 @@
                 </div>
                 <label class="popup__label" for="userphone" minlength="10" maxlength="13" required>Телефон</label>
                 <div class="popup__input-container">
-                    <input class="popup__input" type="tel" name="userphone">
+                    <input class="popup__input" type="tel" id="userphone">
                     <svg class="popup__icon" width="18" height="18" viewBox="0 0 18 18">
                         <g clip-path="url(#clip0_3_7004)">
                             <path
@@ -676,7 +676,7 @@
                 </div>
                 <label class="popup__label" for="usermail">Пошта</label>
                 <div class="popup__input-container">
-                    <input class="popup__input" type="email" name="usermail">
+                    <input class="popup__input" type="email" id="usermail">
                     <svg class="popup__icon" width="18" height="18" viewBox="0 0 18 18">
                         <g clip-path="url(#clip0_3_7010)">
                             <path
@@ -693,8 +693,9 @@
                 <div class="popup__coment-container">
                     <textarea class="popup__coment" id="coment" name="coment" placeholder="Введіть текст" maxlength="300"></textarea>
                 </div>
-                <input type="checkbox" name="popup__agreement">
-                <label for="popup__agreement" class="popup__label label__checkbox">
+                <label class="popup__label label__checkbox">
+                    <input class="checkbox" type="checkbox" >
+                    <span class="check"></span>
                     Погоджуюся з розсилкою та приймаю <a class="popup__conditions" href="#">Умови договору</a> 
                 </label>
                 <button class="button popup__button" type="submit">
