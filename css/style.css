@@ -164,6 +164,7 @@
 }
 
 .section {
+   flex: auto;
    margin: 94px 0;
 }
 
@@ -351,7 +352,7 @@
 
 /* Картки портфоліо */
 .portfolio__item {
-   max-width: 370px;
+   flex: 0 1 370px;
    border: 1px solid var(--color-border);
    overflow: hidden;
 }
@@ -360,8 +361,17 @@
    margin: 20px 24px;
 }
 
+.portfolio__picture {
+   position: relative;
+   max-width: 100%;
+}
+
 .portfolio__img {
    position: relative;
+   max-width: 100%;
+   height: auto;
+   object-fit: cover;
+   object-position: center;
 }
 
 .portfolio__subtitle {
@@ -379,8 +389,9 @@
 
 .portfolio-middle {
    position: absolute;
+   max-width: 100%;
    height: 100%;
-   padding: 0 24px;
+   padding: 24px;
    display: flex;
    align-items: center;
    top: 0;
@@ -389,6 +400,8 @@
    color: var(--color-portfolio-middle);
    background-color: var(--back-portfolio-middle);
    opacity: 0;
+   overflow-y: auto;
+   transition: 0.5s;
 }
 
 .portfolio__item:hover,
@@ -651,41 +664,35 @@
 }
 
 .popup__input-container:hover .popup__input,
-.popup__coment-container:hover {
+.popup__coment-container:hover,
+.popup__input:focus,
+.popup__coment:focus {
    border-color: var(--border-popup-accent);
 }
 
-.popup__input:active .popup__icon {
-   /* border-color: var(--border-popup-accent); */
+.popup__input-container:hover .popup__icon {
    fill: var(--border-popup-accent);
 }
 
-.popup__input-container:hover .popup__icon,
-.popup__input-container:focus .popup__icon {
-   fill: var(--border-popup-accent);
-}
+/* Коментар */
 
 .popup__coment {
-   height: 100%;
-   width: 100%;
-   resize: none;
-   color: var(--text-popup-label);
-}
-
-.popup__coment::placeholder {
-   color: var(--color-text-placeholder);
-}
-
-.popup__coment-container {
    width: 100%;
    height: 120px;
-   overflow: auto;
+   resize: none;
+   color: var(--text-popup-label);
    padding: 12px 16px;
    font-size: 16px;
    border: 1px solid var(--border-popup-primary);
    border-radius: 4px;
    margin-bottom: 20px;
 }
+
+.popup__coment::placeholder {
+   color: var(--color-text-placeholder);
+}
+
+/* Чекбокс */
 
 .label__checkbox {
    display: inline-block;
@@ -703,3 +710,14 @@
 }
 
 /* ---------------- Брейкпоінти ---------------- */
+
+.portfolio__cards {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 30px;
+   justify-content: space-around;
+}
+
+.portfolio__item {
+   flex: 0 1 33, 333%;
+}
