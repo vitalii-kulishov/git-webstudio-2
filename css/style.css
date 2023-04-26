@@ -757,6 +757,10 @@
       align-content: flex-end;
    }
 
+   .hero{
+      height: 400px;
+   }
+
    .features__inner {
       max-width: 354px;
    }
