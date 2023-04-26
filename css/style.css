@@ -46,9 +46,9 @@
 
 .container__logo-nav {
    height: 100%;
+   display: flex;
    max-width: 520px;
    width: 100%;
-   display: flex;
    justify-content: space-between;
    align-items: center;
 }
@@ -107,18 +107,17 @@
 }
 
 .header__connection {
-   max-width: 350px;
    width: 100%;
    display: flex;
    flex-wrap: wrap;
-   justify-content: space-between;
+   justify-content: flex-end;
 }
 
 .connection__link {
    color: var(--color-text-p);
    display: flex;
    align-items: center;
-   margin: 5px 0 5px 10px;
+   margin: 5px 0 5px 30px;
 }
 
 .connection__icon {
@@ -252,6 +251,7 @@
 
 /* Наша команда */
 .team__inner {
+   width: 270px;
    display: flex;
    align-items: center;
    background-color: var(--back-primary);
@@ -259,6 +259,12 @@
    box-shadow: var(--shadow-team);
    font-size: 16px;
    line-height: calc(19/16);
+}
+
+.team__photo {
+   width: 100%;
+   height: auto;
+   object-fit: cover;
 }
 
 .team__name {
@@ -406,6 +412,7 @@
    color: var(--color-portfolio-middle);
    background-color: var(--back-portfolio-middle);
    opacity: 0;
+   visibility: hidden;
    overflow-y: auto;
    transition: 0.5s;
 }
@@ -419,6 +426,7 @@
 .portfolio__item:hover .portfolio-middle,
 .portfolio__item:focus .portfolio-middle {
    opacity: 1;
+   visibility: visible;
 }
 
 /* ---------------- Футер ---------------- */
@@ -471,7 +479,6 @@
    letter-spacing: 0.03em;
    text-transform: uppercase;
    color: var(--footer-text);
-   margin: 12px 0 20px 0;
 }
 
 .social__menu {
@@ -508,7 +515,7 @@
 
 .footer__social,
 .footer__subscription {
-   margin-left: 10px;
+   margin: 12px 0 0 10px;
 }
 
 
@@ -525,7 +532,11 @@
    background-color: transparent;
    border: 1px solid var(--border-sending);
    border-radius: 4px;
-   margin: 20px 12px 0 0;
+}
+
+.social__menu,
+.subscription__input {
+   margin-top: 20px;
 }
 
 .subscription__input,
@@ -534,6 +545,10 @@
    line-height: calc(20/16);
    letter-spacing: 0.05em;
    color: var(--footer-input-sending);
+}
+
+.subscription__button {
+   margin-left: 12px;
 }
 
 /* ---------------- Кнопка ---------------- */
@@ -557,9 +572,6 @@
    background-color: var(--back-alt-hero);
 }
 
-.subscription__button {
-   margin-top: 10px;
-}
 
 .subscription__icon {
    fill: var(--color-text-button);
@@ -719,7 +731,7 @@
    margin-right: 8px;
 }
 
-.checkbox:checked+ .check {
+.checkbox:checked+.check {
    background: url(../images/modal/check.svg) center no-repeat, var(--back-alt-button);
    border: none;
 }
@@ -736,3 +748,80 @@
 }
 
 /* ---------------- Брейкпоінти ---------------- */
+@media (width<1599px) {
+   .header__connection {
+      flex-direction: column;
+      align-content: flex-end;
+   }
+
+   .features__inner {
+      max-width: 354px;
+   }
+
+   .ourwork .container {
+      display: none;
+   }
+
+   .team__inner {
+      width: 354px;
+   }
+
+   .clients__inner {
+      width: 226px;
+   }
+
+   .portfolio__item {
+      flex: 0 1 354px;
+   }
+
+
+
+   .footer__container {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: 48px;
+      justify-content: space-around;
+   }
+
+   .address,
+   .footer__social,
+   .footer__subscription {
+      text-align: center;
+   }
+
+   .address {
+      margin-right: 15px;
+   }
+
+   .footer__social,
+   .footer__subscription {
+      margin-left: 0;
+   }
+
+   .footer__subscription{
+      width: 100%;
+   }
+   
+   .subscription__form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 450px;
+      margin: auto;
+   }
+
+   .subscription__input {
+      width: 100%;
+   }
+
+   .subscription__button {
+      margin: 20px 0 0 0;
+   }
+
+
+   .popup__body {
+      width: 450px;
+   }
+
+}
